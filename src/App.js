@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Header from "./pages/header/header";
+import {Switch, Route} from "react-router-dom";
+import Footer from "./pages/Footer/footer";
+import About from "./pages/About/about";
+import Reservation from "./pages/Reservation/reservation";
+import Home from "./pages/Home/home";
+import Login from "./pages/Login/login";
+import Catering from "./pages/Catering/catering";
+import Contact from "./pages/Contact/contact";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+          <Header/>
+          <Switch>
+              <Route exact path={"/"} component={Home}/>
+              <Route path={"/about"} component={About}/>
+              <Route path={"/reservation"} component={Reservation}/>
+              <Route path={"/login"} component={Login}/>
+              <Route path={"/contact"} component={Contact}/>
+              <Route path={"/service"} component={Catering}/>
+              {/*<Route path={"/"} component={Login}/>*/}
+          </Switch>
+      </div>
+//  <>
+//
+//
+//           {/*<About/>*/}
+//           {/*<Reservation/>*/}
+//           {/*<Home/>*/}
+//
+//          {/*<Login/>*/}
+//          {/*<Catering/>*/}
+//          <Contact/>
+//      {/*<Footer/>*/}
+//
+// </>
+
   );
 }
 
