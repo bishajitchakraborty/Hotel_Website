@@ -42,7 +42,7 @@ const Header = () => {
     return (
         <div>
             <section className={'w-full '}>
-                <div className={'flex bg-slate-300 content-center items-center'}>
+                <div className={'flex bg-white content-center items-center'}>
                     <div className={'justify-start pl-16 py-4'}>
                         <img className={'logo'} height={"80px"} src={logo} alt=""/>
                     </div>
@@ -54,7 +54,7 @@ const Header = () => {
                                 <NavLink to={v.url}
                                     onClick={() => setActiveTabIndex(i)}
                                     key={`profile-tab-${i}`}
-                                    className={classnames(activeTabIndex === i ? "active" : "", "mx-8 pb-4")}
+                                    className={classnames(activeTabIndex === i ? "active" : "", "mx-8 pb-4 text-black underline-offset-8")}
                                 >
                                     {v.name}
                                 </NavLink>

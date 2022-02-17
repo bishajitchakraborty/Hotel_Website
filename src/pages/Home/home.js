@@ -4,10 +4,11 @@ import img_3 from "../../assets/image/img_3.png";
 import img_12 from "../../assets/image/img_12.png";
 import img_10 from "../../assets/image/img_10.png";
 import img_11 from "../../assets/image/img_11.png";
-import about from "../../assets/image/img_9.png";
+import about from "../../assets/image/img_15.png";
 import res from "../../assets/image/img_13.png";
 import offer from "../../assets/image/img_14.png";
 import promotion from "../../assets/image/promotions.webp";
+import img_6 from "../../assets/image/img_6.png";
 
 const Home = () => {
     return (
@@ -15,7 +16,7 @@ const Home = () => {
             <div>
 
                 <section className={'w-full '}>
-                    <div className={'flex w-full relative h-140 object-cover items-center  justify-center bg-no-repeat'}
+                    <div className={'flex w-full relative h-224 object-cover items-center  justify-center bg-no-repeat'}
                         style={{backgroundImage: `url(${about})`}}>
                         <div className={'w-full  text-center'}>
                                 <span className={'italic text-2xl text-lime-200'}>
@@ -43,17 +44,27 @@ const Home = () => {
                     </div>
                     <div className={'flex flex-wrap border-y border-gray-300 py-10 '}>
                         <div className={'sm:w-1/2 w-full pr-4'}>
-                            <img className={'h-96 w-full'} src={img_10}/>
+                            <div className={'pb-2'}>
+                                <img className={'h-48 w-full object-cover'} src={img_10}/>
+                            </div>
+                            <div className={'flex w-full '}>
+                                <div className={'sm:w-1/2 pr-2'}>
+                                    <img className={'h-48 w-full object-cover pb-2'} src={img_10}/>
+                                </div>
+                                <div className={'sm:w-1/2 '}>
+                                    <img className={'h-48 w-full object-cover pb-2'} src={img_10}/>
+                                </div>
+                            </div>
                         </div>
                         <div className={'sm:w-1/2 w-full pl-4'}>
-                            <img className={' h-96 w-full'} src={img_11}/>
+                            <img className={' h-96 w-full object-cover'} src={img_11}/>
                         </div>
                     </div>
 
                 </section>
 
 
-                <section className={'sm:w-3/5 mx-auto border-b border-gray-300'}>
+                <section className={'sm:w-3/5 mx-auto  border-b border-gray-300'}>
                     <div className={'my-8 '}>
                         <h2 className={'text-2xl pb-4'}>Complete work with in-room free Wi-Fi</h2>
                         <p className={'pr-48'}>
@@ -63,55 +74,58 @@ const Home = () => {
                             a perfect home base for both business and leisure trips to the Bangladesh capital.<br/><br/>
                         </p>
                     </div>
-                    <div className={'flex flex-wrap  mt-10 mb-16'}>
-                        {[1,1,1].map((v,i)=>(
-                            <div className={' sm:w-1/3  bg-white border border-gray-300 '}>
-                                <div className={'relative'}>
-                                    <img  height="" width={''} src={img_12}/>
-                                </div>
-                                <div className={'text-center'}>
-                                    <h2 className={'py-2 pt-4 text-2xl'}><span className={''}>Superior Room</span></h2>
-                                    <p className={'text-center text-sm text-gray-400'}>28 m^2 | 2 double or 1 king | 2 adults</p>
-                                </div>
-                                <div className={'flex flex-wrap text-center text-gray-400 w-3/4 mx-auto py-2'}>
-                                    <span className="material-icons w-1/6 ">
-                                        wifi
-                                    </span>
-                                    <span className="material-icons w-1/6 ">
-                                        tv
-                                    </span>
-                                    <span className="material-icons w-1/6 ">
-                                        headphones
-                                    </span>
-                                    <span className="material-icons w-1/6 ">
-                                        coffee_maker
-                                    </span>
-                                    <span className="material-icons w-1/6 ">
-                                        event
-                                    </span>
-                                    <span className="material-icons w-1/6 ">
-                                        light
-                                    </span>
-                                    <span className="material-icons w-1/6 ">
-                                        dry
-                                    </span>
-                                    <span className="material-icons w-1/6 ">
-                                        soap
-                                    </span>
-                                    <span className="material-icons w-1/6 ">
-                                        timer
-                                    </span>
-                                    <span className="material-icons w-1/6 ">
-                                        wifi
-                                    </span>
-                                </div>
 
-                                <div className={' w-3/4 mx-auto pb-10 pt-4'}>
-                                    <p className={'text-sm text-center text-gray-400'}>
-                                        Unwind with plush bedding, free Wi-Fi,and a smart TV in this standardroom.
-                                    </p>
-                                </div>
+                    <div className={' flex flex-wrap  mt-10 mb-16'}>
+                        {[1,1,1,1,1,1].map((v,i)=>(
+                            <div className={'sm:w-1/3 w-full'}>
+                                <div className={'m-2 bg-white border border-gray-300 '}>
+                                    <div className={'relative'}>
+                                        <img  height="" width={''} src={img_12}/>
+                                    </div>
+                                    <div className={'text-center'}>
+                                        <h2 className={'py-2 pt-4 text-2xl'}><span className={''}>Superior Room</span></h2>
+                                        <p className={'text-center text-sm text-gray-400'}>28 m^2 | 2 double or 1 king | 2 adults</p>
+                                    </div>
+                                    <div className={'flex flex-wrap text-center text-gray-400 w-3/4 mx-auto py-2'}>
+                                        <span className="material-icons w-1/6 ">
+                                            wifi
+                                        </span>
+                                        <span className="material-icons w-1/6 ">
+                                            tv
+                                        </span>
+                                        <span className="material-icons w-1/6 ">
+                                            headphones
+                                        </span>
+                                        <span className="material-icons w-1/6 ">
+                                            coffee_maker
+                                        </span>
+                                        <span className="material-icons w-1/6 ">
+                                            event
+                                        </span>
+                                        <span className="material-icons w-1/6 ">
+                                            light
+                                        </span>
+                                        <span className="material-icons w-1/6 ">
+                                            dry
+                                        </span>
+                                        <span className="material-icons w-1/6 ">
+                                            soap
+                                        </span>
+                                        <span className="material-icons w-1/6 ">
+                                            timer
+                                        </span>
+                                        <span className="material-icons w-1/6 ">
+                                            wifi
+                                        </span>
+                                    </div>
 
+                                    <div className={' w-3/4 mx-auto pb-10 pt-4'}>
+                                        <p className={'text-sm text-center text-gray-400'}>
+                                            Unwind with plush bedding, free Wi-Fi,and a smart TV in this standardroom.
+                                        </p>
+                                    </div>
+
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -166,31 +180,33 @@ const Home = () => {
                     <div className={'my-8 '}>
                         <h2 className={'text-2xl pb-4'}>Offers and packages</h2>
                     </div>
-                    <div className={'flex flex-wrap  mt-10 mb-16'}>
-                        {[1,1,1].map((v,i)=>(
-                            <div className={' sm:w-1/3  bg-white border border-gray-300 '}>
-                                <div className={'relative'}>
-                                    <img  height="" width={''} src={offer}/>
-                                </div>
-                                <div className={'pl-4 pb-8'}>
-                                    <h2 className={'py-2 pt-4 text-2xl'}><span className={''}>Business Experience</span></h2>
-                                </div>
-                                <div className={' w-full mx-auto pb-10 pt-4 px-4'}>
-                                    <p className={'text-sm  text-gray-400'}>
-                                        Unwind with plush bedding, free Wi-Fi,and a smart TV in this standardroom.
-                                    </p>
-                                </div>
-                                <div className={'flex pb-4'}>
-                                    <div className={'w-1/2 p-2 pl-4'}>
-                                        <p className={'text-xs'}>Book this offer from</p>
-                                        <h2 className={'text-lg font-semifont'}>EUR 99.55</h2>
-                                        <p className={'text-xs'}>per night</p>
+                    <div className={' flex flex-wrap  mt-10 mb-16'}>
+                        {[1,1,1,1,1,1].map((v,i)=>(
+                            <div className={'sm:w-1/3 w-full'}>
+                                <div className={'m-2 bg-white border border-gray-300 '}>
+                                    <div className={'relative'}>
+                                        <img  height="" width={''} src={offer}/>
                                     </div>
-                                    <div className={'w-1/2 p-2'}>
+                                    <div className={'pl-4 pb-8'}>
+                                        <h2 className={'py-2 pt-4 text-2xl'}><span className={''}>Business Experience</span></h2>
+                                    </div>
+                                    <div className={' w-full mx-auto pb-10 pt-4 px-4'}>
+                                        <p className={'text-sm  text-gray-400'}>
+                                            Unwind with plush bedding, free Wi-Fi,and a smart TV in this standardroom.
+                                        </p>
+                                    </div>
+                                    <div className={'flex pb-4'}>
+                                        <div className={'w-1/2 p-2 pl-4'}>
+                                            <p className={'text-xs'}>Book this offer from</p>
+                                            <h2 className={'text-lg font-semifont'}>EUR 99.55</h2>
+                                            <p className={'text-xs'}>per night</p>
+                                        </div>
+                                        <div className={'w-1/2 p-2'}>
 
-                                            <button
-                                                className="w-full flex justify-center  mx-auto text-white bg-red-700 py-4 focus:outline-none hover:bg-red-900  text-sm">Book Now</button>
+                                                <button
+                                                    className="w-full flex justify-center  mx-auto text-white bg-red-700 py-4 focus:outline-none hover:bg-red-900  text-sm">Book Now</button>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>

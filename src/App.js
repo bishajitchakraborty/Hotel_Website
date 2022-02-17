@@ -22,6 +22,7 @@ function App() {
               <Route path={"/service"} component={Catering}/>
               {/*<Route path={"/"} component={Login}/>*/}
           </Switch>
+          <Footer/>
       </div>
 //  <>
 //
