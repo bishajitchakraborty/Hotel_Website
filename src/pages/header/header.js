@@ -17,7 +17,7 @@ const tab = [
     //     url:"/menu"
     // },
     {
-        name: "CATERING SERVICE",
+        name: "DINING",
         url:"/service"
     },
     {
@@ -29,7 +29,7 @@ const tab = [
         url:"/contact"
     },
     {
-        name: "LOGIN",
+        name: "LOGIN|SIGNUP",
         url:"/login"
     },
     // {

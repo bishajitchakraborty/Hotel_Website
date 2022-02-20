@@ -16,7 +16,7 @@ const Home = () => {
             <div>
 
                 <section className={'w-full '}>
-                    <div className={'flex w-full relative h-224  object-cover items-center  justify-center bg-no-repeat'}
+                    <div className={'flex w-full relative sm:h-224  object-cover items-center  justify-center bg-no-repeat'}
                         style={{backgroundImage: `url(${about})`}}>
                         <div className={'w-full  text-center'}>
                                 <span className={'italic text-2xl text-lime-200'}>
@@ -133,7 +133,7 @@ const Home = () => {
 
 
                 <section className={'sm:w-3/5 w-full mx-auto flex flex-wrap  py-8 border-b border-gray-400  mb-16 sm:p-0 p-2'}>
-                    <h2 className={'text-2xl'}>Host up to 1,100 guests in our flexible venues</h2>
+                    <h2 className={'text-2xl pt-10'}>Host up to 1,100 guests in our flexible venues</h2>
                     <div className={'flex flex-wrap py-8 '}>
                         <div className={'sm:w-1/2 w-full sm:pr-4'}>
                            <p className={'text-gray-400'}>

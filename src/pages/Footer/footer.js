@@ -4,7 +4,7 @@ import {Container, Grid, Typography} from "@material-ui/core";
 const Footer = () => {
     return (
         <div>
-            <div className={'w-full bg-white mt-4 border-t-2 border-slate-300 sm:p-0 p-2'}>
+            <div className={'w-full bg-white mt-10 border-t-2 border-slate-300 sm:p-0 p-2'}>
                 <div className={'sm:w-3/5 flex flex-wrap mx-auto h-32  '}>
                     <div className={'sm:w-3/4 flex flex-wrap w-full sm:justify-start justify-center' }>
                         <img className={'h-20 w-40  sm:pt-4'} src={logo}/>
