@@ -3,8 +3,8 @@ import img_1 from '../../assets/image/img_1.png'
 const Login = () => {
     return (
         <div>
-            <section className={'sm:w-2/4 flex mx-auto border border-gray-300 bg-white mt-32'}>
-                <div className={'sm:w-1/2 w-full p-4  border-r border-gray-300'}>
+            <section className={'sm:w-2/4 flex flex-wrap mx-auto sm:border border-gray-300 bg-white mt-32 sm:p-0 px-2'}>
+                <div className={'sm:w-1/2 w-full p-4  sm:border-r border-gray-300 '}>
                     <img height={'400'} width={'470'} src={img_1}/>
                 </div>
                 <div className={'sm:w-1/2 w-full'}>

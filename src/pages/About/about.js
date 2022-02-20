@@ -20,7 +20,7 @@ const About = () => {
 
                 </section>
 
-                    <div className={'flex sm:w-3/5 w-full h-auto pb-10 flex flex-wrap mx-auto  text-justify '}>
+                    <div className={'flex sm:w-3/5 w-full h-auto pb-10 flex flex-wrap mx-auto  text-justify sm:p-0 p-2 '}>
                         <div className="flex w-full mt-16">
                             <h1 className="text-xl  text-black">
                                 About XYZ Meridien Dhaka
@@ -40,7 +40,7 @@ const About = () => {
 
 
 
-                <section className={'sm:w-3/5  mx-auto bg-white text-justify mb-10'}>
+                <section className={'sm:w-3/5  mx-auto bg-white text-justify mb-10 sm:p-0 p-2'}>
                    <h2 className="text-xl  text-black pb-4">Location</h2>
                     <div className={'border h-124 '}>
                     <iframe
@@ -50,44 +50,41 @@ const About = () => {
                     </div>
                 </section>
 
-                <section className={'sm:w-3/5 mx-auto bg-white text-justify '}>
+                <section className={'sm:w-3/5 mx-auto bg-white text-justify mb-10 sm:p-0 p-2'}>
                    <h2 className="sm:text-xl  text-black pb-4">Photos of XYZ  Dhaka</h2>
-                   <div className={'flex '}>
-                        <div className={'w-1/2 h-48 pr-4'}>
-                            <div className={'w-full flex pb-2'}>
-                                 <div className={'w-1/2 pr-1'}>
+                        <div className={' flex flex-wrap mb-4'}>
+                            <div className={'sm:w-1/2 w-full flex pb-2 sm:pr-2'}>
+                                 <div className={'sm:w-1/2 w-full pr-1'}>
                                     <img className={'h-48 w-full object-cover'} src={img_10}/>
                                  </div>
-                                 <div className={'w-1/2 pl-1'}>
+                                 <div className={'sm:w-1/2 w-full pl-1'}>
                                      <img className={'h-48 w-full object-cover'} src={img_10}/>
                                  </div>
                              </div>
-                              <div className={'w-full'}>
+                              <div className={'sm:w-1/2 w-full sm:pl-2'}>
                                     <img className={'h-48 w-full object-cover'} src={img_10}/>
                               </div>
                         </div>
-                        <div className={'w-1/2 pl-4 '}>
-                             <div className={'w-full pb-2'}>
-                                  <img className={'h-48 w-full object-cover'} src={img_10}/>
-                             </div>
-                            <div className={'w-full flex'}>
-                               <div className={'w-1/2 pr-1'}>
-                                  <img className={'h-48 w-full object-cover'} src={img_10}/>
-                               </div>
-                               <div className={'w-1/2 pl-1'}>
-                                   <img className={'h-48 w-full object-cover'} src={img_10}/>
-                               </div>
+                        <div className={' flex flex-wrap'}>
+                            <div className={'sm:w-1/2 w-full sm:pr-2 sm:mb-0 mb-2'}>
+                                <img className={'h-48 w-full object-cover'} src={img_10}/>
+                            </div>
+                            <div className={'sm:w-1/2 w-full flex pb-2 sm:pl-2'}>
+                                <div className={'sm:w-1/2 w-full pr-1'}>
+                                    <img className={'h-48 w-full object-cover'} src={img_10}/>
+                                </div>
+                                <div className={'sm:w-1/2 w-full pl-1'}>
+                                    <img className={'h-48 w-full object-cover'} src={img_10}/>
+                                </div>
                             </div>
                         </div>
-                   </div>
                 </section>
 
 
-                <div className={'bg-white w-full sm:w-3/5 mt-20 mx-auto  mb-10'}>
-
+                <div className={'bg-white w-full sm:w-3/5 mt-10  mx-auto mb-10 sm:p-0 p-2'}>
                     <div className={'w-full text-xl'}>Videos</div>
-                    <div className={'flex mt-4 w-full'}>
-                            <video className={" sm:w-1/2 w-full sm:pr-1"} autoPlay controls muted loop width="800" height="600"
+                    <div className={'flex flex-wrap mt-4 w-full '}>
+                            <video className={" sm:w-1/2 w-full sm:pr-1 sm:mb-0 mb-6"} autoPlay controls muted loop width="800" height="600"
                                    preload="auto">
                                 <source src={video} type="video/mp4"/>
                             </video>
@@ -95,12 +92,8 @@ const About = () => {
                                    preload="auto">
                                 <source src={video} type="video/mp4"/>
                             </video>
-
                     </div>
-
                 </div>
-
-
             </div>
 
 

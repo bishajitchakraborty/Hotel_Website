@@ -16,7 +16,7 @@ const Home = () => {
             <div>
 
                 <section className={'w-full '}>
-                    <div className={'flex w-full relative h-224 object-cover items-center  justify-center bg-no-repeat'}
+                    <div className={'flex w-full relative h-224  object-cover items-center  justify-center bg-no-repeat'}
                         style={{backgroundImage: `url(${about})`}}>
                         <div className={'w-full  text-center'}>
                                 <span className={'italic text-2xl text-lime-200'}>
@@ -27,7 +27,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section className={'sm:w-3/5 mx-auto h-full '}>
+                <section className={'sm:w-3/5 mx-auto h-full sm:p-0 p-2'}>
                     <div className={'my-16 '}>
                         <h2 className={'text-2xl py-8'}>Unwind in style at our hotel in Dhaka, Bangladesh</h2>
                         <p>
@@ -43,7 +43,7 @@ const Home = () => {
                         </p>
                     </div>
                     <div className={'flex flex-wrap border-y border-gray-300 py-10 '}>
-                        <div className={'sm:w-1/2 w-full pr-4'}>
+                        <div className={'sm:w-1/2 w-full sm:pr-4'}>
                             <div className={'pb-2'}>
                                 <img className={'h-48 w-full object-cover'} src={img_10}/>
                             </div>
@@ -56,7 +56,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className={'sm:w-1/2 w-full pl-4'}>
+                        <div className={'sm:w-1/2 w-full sm:pl-4'}>
                             <img className={' h-96 w-full object-cover'} src={img_11}/>
                         </div>
                     </div>
@@ -64,10 +64,10 @@ const Home = () => {
                 </section>
 
 
-                <section className={'sm:w-3/5 mx-auto  border-b border-gray-300'}>
+                <section className={'sm:w-3/5 mx-auto  border-b border-gray-300 sm:p-0 p-2'}>
                     <div className={'my-8 '}>
                         <h2 className={'text-2xl pb-4'}>Complete work with in-room free Wi-Fi</h2>
-                        <p className={'pr-48'}>
+                        <p className={'sm:pr-48'}>
                             Situated on seven acres of lush gardens in the heart of Dhaka's primary commercial hub, the Radisson Blu Dhaka Water Garden provides a serene escape from the bustle of the city.
                             Offering the perfect balance of supreme comfort and business-minded functionality, the hotel features five-star resort amenities and incredible conveniences, such as the short 15-minute
                             drive to Hazrat Shahjalal International Airport (DAC). Major tourist attractions, such as the National Assembly Building or Ahsan Manzil, are also located nearby, making the hotel
@@ -75,7 +75,7 @@ const Home = () => {
                         </p>
                     </div>
 
-                    <div className={' flex flex-wrap  mt-10 mb-16'}>
+                    <div className={' flex flex-wrap  mt-10 mb-16 sm:p-0 p-2'}>
                         {[1,1,1,1,1,1].map((v,i)=>(
                             <div className={'sm:w-1/3 w-full'}>
                                 <div className={'m-2 bg-white border border-gray-300 '}>
@@ -132,11 +132,10 @@ const Home = () => {
                 </section>
 
 
-                <section className={'sm:w-3/5 w-full mx-auto flex flex-wrap  py-8 border-b border-gray-400  mb-16 '}>
-
+                <section className={'sm:w-3/5 w-full mx-auto flex flex-wrap  py-8 border-b border-gray-400  mb-16 sm:p-0 p-2'}>
                     <h2 className={'text-2xl'}>Host up to 1,100 guests in our flexible venues</h2>
                     <div className={'flex flex-wrap py-8 '}>
-                        <div className={'sm:w-1/2 w-full pr-4'}>
+                        <div className={'sm:w-1/2 w-full sm:pr-4'}>
                            <p className={'text-gray-400'}>
                                Plan boardroom meetings, seminars, banquets, or grand weddings with our eight versatile event venues. Covering more
                                than 3,000 square meters, our event facilities can accommodate up to 1,100 guests in a variety of settings.
@@ -144,23 +143,23 @@ const Home = () => {
                                include catering, free Wi-Fi, and the latest audiovisual equipment.
                            </p>
                         </div>
-                        <div className={'sm:w-1/2 w-full pl-4'}>
-                            <img className={' h-96 w-full'} src={img_3}/>
+                        <div className={'sm:w-1/2 w-full sm:pl-4'}>
+                            <img className={' h-96 w-full object-cover'} src={img_3}/>
                         </div>
                     </div>
 
                 </section>
 
 
-                <section className={'sm:w-3/5 w-full mx-auto flex flex-wrap  border-b border-gray-400  mb-16 '}>
+                <section className={'sm:w-3/5 w-full mx-auto flex flex-wrap  border-b border-gray-400  mb-16 sm:p-0 p-2'}>
 
                     <h2 className={'text-2xl'}>Restaurants and bars</h2>
 
                     <div className={'flex flex-wrap py-8 '}>
-                        <div className={'sm:w-1/2 w-full pr-4'}>
-                            <img className={' h-96 w-full'} src={res}/>
+                        <div className={'sm:w-1/2 w-full sm:pr-4'}>
+                            <img className={' h-96 w-full object-cover'} src={res}/>
                         </div>
-                        <div className={'sm:w-1/2 w-full pl-4'}>
+                        <div className={'sm:w-1/2 w-full sm:pl-4'}>
                             <p className={'text-gray-400'}>
 
                                 Take advantage of our four restaurants and two bars when you stay at the Radisson Blu. Eat a hearty breakfast at the Water Garden Brasserie or
@@ -176,7 +175,7 @@ const Home = () => {
 
 
 
-                <section className={'sm:w-3/5 mx-auto border-b border-gray-300'}>
+                <section className={'sm:w-3/5 mx-auto border-b border-gray-300 sm:p-0 p-2'}>
                     <div className={'my-8 '}>
                         <h2 className={'text-2xl pb-4'}>Offers and packages</h2>
                     </div>

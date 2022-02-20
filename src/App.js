@@ -20,23 +20,11 @@ function App() {
               <Route path={"/login"} component={Login}/>
               <Route path={"/contact"} component={Contact}/>
               <Route path={"/service"} component={Catering}/>
-              {/*<Route path={"/"} component={Login}/>*/}
+              <Route path={"/"} component={Login}/>
           </Switch>
           <Footer/>
       </div>
-//  <>
-//
-//
-//           {/*<About/>*/}
-//           {/*<Reservation/>*/}
-//           {/*<Home/>*/}
-//
-//          {/*<Login/>*/}
-//          {/*<Catering/>*/}
-//          <Contact/>
-//      {/*<Footer/>*/}
-//
-// </>
+
 
   );
 }

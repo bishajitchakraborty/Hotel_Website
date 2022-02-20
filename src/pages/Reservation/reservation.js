@@ -3,7 +3,7 @@ import React from 'react';
 const Reservation = () => {
     return (
         <div>
-            <section className={'sm:w-3/5 flex mx-auto mt-16'}>
+            <section className={'sm:w-3/5 flex flex-wrap mx-auto mt-16 sm:p-0 p-2'}>
                 <div className={'sm:w-3/4 w-full bg-slate-100 p-8'}>
                    <h2 className={'text-center italic text-green-900 text-4xl'}> Reservations</h2>
                     <h2 className={'text-center text-6xl'}>Online Booking</h2>
@@ -12,8 +12,8 @@ const Reservation = () => {
                         table at our Restaurant. We will get your mail and response accordingly. Some body from our organization will contact you.
                         Thanks and visit again.
                     </p>
-                    <div className={'flex p-2 pt-8'}>
-                        <div className={'sm:w-1/2 p-2'}>
+                    <div className={'flex flex-wrap p-2 pt-8'}>
+                        <div className={'sm:w-1/2 w-full p-2'}>
                             <label htmlFor="phone"
                                    className="leading-7 text-sm text-gray-600">Name(required)</label>
                             <input
@@ -21,7 +21,7 @@ const Reservation = () => {
                                 type="text"  name="phone"
                                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
                         </div>
-                        <div className={'sm:w-1/2 p-2'}>
+                        <div className={'sm:w-1/2 w-full p-2'}>
                             <label htmlFor="phone"
                                    className="leading-7 text-sm text-gray-600">Phone(required)<span className={"text-xs text-red-500"}></span></label>
                             <input
@@ -31,8 +31,8 @@ const Reservation = () => {
 
                         </div>
                     </div>
-                    <div className={'flex p-2'}>
-                        <div className={'sm:w-1/2 p-2'}>
+                    <div className={'flex flex-wrap p-2'}>
+                        <div className={'sm:w-1/2 w-full p-2'}>
                             <label htmlFor="phone"
                                    className="leading-7 text-sm text-gray-600">Email(required)</label>
                             <input
@@ -40,7 +40,7 @@ const Reservation = () => {
                                 type="text"  name="phone"
                                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
                         </div>
-                        <div className={'sm:w-1/2 p-2'}>
+                        <div className={'sm:w-1/2 w-full p-2'}>
                             <label htmlFor="phone"
                                    className="leading-7 text-sm text-gray-600">Party Size(required)<span className={"text-xs text-red-500"}></span></label>
                             <input
@@ -50,8 +50,8 @@ const Reservation = () => {
 
                         </div>
                     </div>
-                    <div className={'flex p-2'}>
-                        <div className={'sm:w-1/2 p-2'}>
+                    <div className={'flex flex-wrap p-2'}>
+                        <div className={'sm:w-1/2 w-full p-2'}>
                             <label htmlFor="phone"
                                    className="leading-7 text-sm text-gray-600">Select Date(required)</label>
                             <input
@@ -59,7 +59,7 @@ const Reservation = () => {
                                 type="date"  name="phone"
                                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
                         </div>
-                        <div className={'sm:w-1/2 p-2'}>
+                        <div className={'sm:w-1/2 w-full p-2'}>
                             <label htmlFor="phone"
                                    className="leading-7 text-sm text-gray-600">Select Time(required)<span className={"text-xs text-red-500"}></span></label>
                             <input
@@ -76,7 +76,7 @@ const Reservation = () => {
                     </div>
                 </div>
 
-                <div className={'sm:w-1/4 w-full bg-green-900 p-16'}>
+                <div className={'sm:w-1/4 w-full bg-green-900 p-16 sm:mb-0 mt-4'}>
                     <div>
                         <h2 className={'italic text-lg text-center text-green-500'}>Opening</h2>
                         <h1 className={'text-center text-white text-5xl pb-2'}>Time</h1>

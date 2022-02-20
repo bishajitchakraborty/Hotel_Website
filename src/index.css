@@ -14,3 +14,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.menu{
+  transition: all ease-in-out .5s;
+  height: 0;
+}
+
+.menu-active .menu{
+  height: 250px;
+}
