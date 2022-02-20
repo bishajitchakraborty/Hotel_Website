@@ -86,7 +86,7 @@ const Home = () => {
                                         <h2 className={'py-2 pt-4 text-2xl'}><span className={''}>Superior Room</span></h2>
                                         <p className={'text-center text-sm text-gray-400'}>28 m^2 | 2 double or 1 king | 2 adults</p>
                                     </div>
-                                    <div className={'flex flex-wrap text-center text-gray-400 w-3/4 mx-auto py-2'}>
+                                    <div className={'flex flex-wrap text-center text-gray-400 justify-center w-3/4 mx-auto py-2'}>
                                         <span className="material-icons w-1/6 ">
                                             wifi
                                         </span>

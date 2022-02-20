@@ -21,12 +21,12 @@ const About = () => {
                 </section>
 
                     <div className={'flex sm:w-3/5 w-full h-auto pb-10 flex flex-wrap mx-auto  text-justify '}>
-                        <div className="flex flex-col pl-4 w-full mt-8">
-                            <h1 className="sm:text-xl text-2xl text-black">
-                                About Le Meridien Dhaka
+                        <div className="flex w-full mt-16">
+                            <h1 className="text-xl  text-black">
+                                About XYZ Meridien Dhaka
                             </h1>
                         </div>
-                        <div className={' w-full text-gray-500   p-4'}>
+                        <div className={' w-full text-gray-500 mt-4'}>
                             <p>With a stay at Le Meridien Dhaka in Dhaka, you'll be next to a golf course, within a 10-minute drive of Jamuna Future Park and Aarong Flagship Outlet. This 5-star resort is 5.2 mi (8.4 km) from United Hospital and
                                 5.9 mi (9.5 km) from Kurmitola General Hospital. Make yourself at home in one of the 304 air-conditioned rooms featuring minibars and LED televisions. Complimentary wired and wireless Internet access keeps you connected,
                                 and cable programming provides entertainment. Private bathrooms with separate bathtubs and showers feature deep soaking bathtubs and rainfall showerheads. Conveniences include phones, as well as safes and desks. Pamper
@@ -41,15 +41,17 @@ const About = () => {
 
 
                 <section className={'sm:w-3/5  mx-auto bg-white text-justify mb-10'}>
-                   <h2 className="sm:text-xl text-2xl text-black pb-4">Location</h2>
+                   <h2 className="text-xl  text-black pb-4">Location</h2>
                     <div className={'border h-124 '}>
-
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29192.707637170097!2d90.4107785!3d23.850992549999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c6652c0b863d%3A0xc404e4ca02255b30!2sKawlar%20Bazar!5e0!3m2!1sen!2sbd!4v1645253355034!5m2!1sen!2sbd"
+                       className={'h-124 w-full'}   allowFullScreen="" loading="lazy">
+                    </iframe>
                     </div>
-
                 </section>
 
                 <section className={'sm:w-3/5 mx-auto bg-white text-justify '}>
-                   <h2 className="sm:text-xl text-2xl text-black pb-4">Photos of Pan Pacific Dhaka</h2>
+                   <h2 className="sm:text-xl  text-black pb-4">Photos of XYZ  Dhaka</h2>
                    <div className={'flex '}>
                         <div className={'w-1/2 h-48 pr-4'}>
                             <div className={'w-full flex pb-2'}>
@@ -81,23 +83,21 @@ const About = () => {
                 </section>
 
 
-                <div className={'bg-white w-full flex sm:w-3/5 mt-20 mx-auto  text-justify mb-10'}>
-                     <div>
-                         <h2>Videos</h2>   
-                     </div>
-                    <section className={'w-1/2 m-2'}>
-                        <video className={"my-20 w-full"} autoPlay controls muted loop width="" height="600"
-                               preload="auto">
-                            <source src={video} type="video/mp4"/>
-                        </video>
-                    </section>
-                    <section className={'w-1/2 m-2'}>
+                <div className={'bg-white w-full sm:w-3/5 mt-20 mx-auto  mb-10'}>
 
-                        <video className={"my-20 w-full"} autoPlay controls muted loop width="800" height="600"
-                               preload="auto">
-                            <source src={video} type="video/mp4"/>
-                        </video>
-                    </section>
+                    <div className={'w-full text-xl'}>Videos</div>
+                    <div className={'flex mt-4 w-full'}>
+                            <video className={" sm:w-1/2 w-full sm:pr-1"} autoPlay controls muted loop width="800" height="600"
+                                   preload="auto">
+                                <source src={video} type="video/mp4"/>
+                            </video>
+                            <video className={" sm:w-1/2 full sm:pl-1"} autoPlay controls muted loop width="800" height="600"
+                                   preload="auto">
+                                <source src={video} type="video/mp4"/>
+                            </video>
+
+                    </div>
+
                 </div>
 
 
