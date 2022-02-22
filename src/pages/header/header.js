@@ -12,13 +12,14 @@ const tab = [
         name: "WHO WE ARE",
         url:"/about"
     },
-    // {
-    //     name: "OUR MENU",
-    //     url:"/menu"
-    // },
+
     {
         name: "DINING",
         url:"/service"
+    },
+    {
+        name: "GALLERY",
+        url:"/gallery"
     },
     {
         name: "RESERVATION",
@@ -29,13 +30,10 @@ const tab = [
         url:"/contact"
     },
     {
-        name: "LOGIN|SIGNUP",
+        name: "LOGIN",
         url:"/login"
     },
-    // {
-    //     name: "CART",
-    //     url:"/cart"
-    // },
+
 ]
 
 

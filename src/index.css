@@ -20,8 +20,6 @@ code {
 }
 
 .menu-active .menu{
-  height: 250px;
+ height:300px;
 }
-.dining{
-  background-color: #ffffff;
-}
+

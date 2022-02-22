@@ -8,6 +8,8 @@ import Home from "./pages/Home/home";
 import Login from "./pages/Login/login";
 import Catering from "./pages/Catering/catering";
 import Contact from "./pages/Contact/contact";
+import Myphoto from "./pages/Myphoto/Myphoto";
+import SignUp from "./pages/SignUp/SignUp";
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
               <Route path={"/login"} component={Login}/>
               <Route path={"/contact"} component={Contact}/>
               <Route path={"/service"} component={Catering}/>
-              <Route path={"/"} component={Login}/>
+              <Route path={"/gallery"} component={Myphoto}/>
+              <Route path={"/signup"} component={SignUp}/>
+
           </Switch>
           <Footer/>
       </div>

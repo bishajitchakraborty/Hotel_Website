@@ -1,14 +1,14 @@
 import React from 'react';
-import s2 from "../../assets/image/slider1.jpg"
+
 import img_3 from "../../assets/image/img_3.png";
 import img_12 from "../../assets/image/img_12.png";
 import img_10 from "../../assets/image/img_10.png";
 import img_11 from "../../assets/image/img_11.png";
-import about from "../../assets/image/img_15.png";
 import res from "../../assets/image/img_13.png";
 import offer from "../../assets/image/img_14.png";
-import promotion from "../../assets/image/promotions.webp";
-import img_6 from "../../assets/image/img_6.png";
+
+import SliHome from "./SliHome";
+
 
 const Home = () => {
     return (
@@ -16,19 +16,20 @@ const Home = () => {
             <div>
 
                 <section className={'w-full '}>
-                    <div className={'flex w-full relative sm:h-224  object-cover items-center  justify-center bg-no-repeat'}
-                        style={{backgroundImage: `url(${about})`}}>
-                        <div className={'w-full  text-center'}>
-                                <span className={'italic text-2xl text-lime-200'}>
-                                    Welcome to
-                                </span>
-                                <h2 className={'font-semibold sm:text-4xl text-white uppercase text-center'}>Grand Restaurant</h2>
-                        </div>
-                    </div>
+                    <SliHome/>
+                    {/*<div className={'flex w-full relative h-224  object-cover items-center  justify-center bg-no-repeat'}*/}
+                    {/*    style={{backgroundImage: `url(${about})`}}>*/}
+                    {/*    <div className={'w-full  text-center'}>*/}
+                    {/*            <span className={'italic text-2xl text-lime-200'}>*/}
+                    {/*                Welcome to*/}
+                    {/*            </span>*/}
+                    {/*            <h2 className={'font-semibold sm:text-4xl text-white uppercase text-center'}>Grand Restaurant</h2>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </section>
 
                 <section className={'sm:w-3/5 mx-auto h-full sm:p-0 p-2'}>
-                    <div className={'my-16 '}>
+                    <div className={'my-10 '}>
                         <h2 className={'text-2xl py-8'}>Unwind in style at our hotel in Dhaka, Bangladesh</h2>
                         <p>
 

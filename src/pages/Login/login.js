@@ -1,5 +1,7 @@
 import React from 'react';
 import img_1 from '../../assets/image/img_1.png'
+import NavLink from "react-router-dom/es/NavLink";
+import Link from "react-router-dom/es/Link";
 const Login = () => {
     return (
         <div>
@@ -33,11 +35,10 @@ const Login = () => {
                         className="w-full mt-5 flex justify-center rounded-2xl mx-auto text-white bg-slate-400 border-0 py-2 italic focus:outline-none hover:bg-indigo-600  text-lg">Login</button>
                     </div>
                     <div className={'justify-items-center w-full'}>
-                        <span className={'pl-24'} >Don't have an account?<a className={'text-blue-900'} href={"#"}>Sign Up</a></span>
+                            <span className={'pl-24'} > Don't have an account?
+                               <Link to="/signup">SignUp</Link>
+                            </span>
                     </div>
-
-
-
                 </div>
             </section>
             

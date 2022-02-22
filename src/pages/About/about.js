@@ -4,6 +4,8 @@ import hotel_Img from '../../../src/assets/image/hotel_Img.jpg'
 import img from '../../../src/assets/image/img.png'
 import video from '../../../src/assets/video/video_1.mp4'
 import img_10 from "../../assets/image/img_10.png";
+import Myphoto from "../Myphoto/Myphoto";
+import AboutSlide from "./AboutSlide";
 
 const About = () => {
     return (
@@ -50,36 +52,10 @@ const About = () => {
                     </div>
                 </section>
 
-                <section className={'sm:w-3/5 mx-auto bg-white text-justify mb-10 sm:p-0 p-2'}>
+                <section className={'sm:w-3/5 mx-auto text-justify mb-10 sm:p-0 p-2'}>
                    <h2 className="sm:text-xl  text-black pb-4">Photos of XYZ  Dhaka</h2>
-                        <div className={' flex flex-wrap mb-4'}>
-                            <div className={'sm:w-1/2 w-full flex pb-2 sm:pr-2'}>
-                                 <div className={'sm:w-1/2 w-full pr-1'}>
-                                    <img className={'h-48 w-full object-cover'} src={img_10}/>
-                                 </div>
-                                 <div className={'sm:w-1/2 w-full pl-1'}>
-                                     <img className={'h-48 w-full object-cover'} src={img_10}/>
-                                 </div>
-                             </div>
-                              <div className={'sm:w-1/2 w-full sm:pl-2'}>
-                                    <img className={'h-48 w-full object-cover'} src={img_10}/>
-                              </div>
-                        </div>
-                        <div className={' flex flex-wrap'}>
-                            <div className={'sm:w-1/2 w-full sm:pr-2 sm:mb-0 mb-2'}>
-                                <img className={'h-48 w-full object-cover'} src={img_10}/>
-                            </div>
-                            <div className={'sm:w-1/2 w-full flex pb-2 sm:pl-2'}>
-                                <div className={'sm:w-1/2 w-full pr-1'}>
-                                    <img className={'h-48 w-full object-cover'} src={img_10}/>
-                                </div>
-                                <div className={'sm:w-1/2 w-full pl-1'}>
-                                    <img className={'h-48 w-full object-cover'} src={img_10}/>
-                                </div>
-                            </div>
-                        </div>
+                    <AboutSlide/>
                 </section>
-
 
                 <div className={'bg-white w-full sm:w-3/5 mt-10  mx-auto mb-10 sm:p-0 p-2'}>
                     <div className={'w-full text-xl'}>Videos</div>
