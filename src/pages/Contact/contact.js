@@ -1,142 +1,231 @@
-import React from 'react';
-import contact from '../../assets/image/contact.png'
+import React, {useEffect, useState} from 'react';
+import "../../assets/css/style.css"
+import {useDispatch, useSelector} from "react-redux";
+import {message} from "../../Services/Message/MessageAction";
+import {toast} from "react-toastify";
+import {getContact} from "../../Services/Contact/ContactAction";
+import _ from "lodash";
+import ReservationSlider from "../Reservation/reservationSlider";
+import {Skeleton} from "@mui/material";
 const Contact = () => {
+    const mess = useSelector(store=>store.message)
+    const contact = useSelector(store=>store.contact)
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(getContact())
+    }, [])
+    const [text, setText] = useState({
+        name:"", email:"", phone:"", subject:"", message:""
+    })
+    function sendMessage(){
+        message(text).then(r=>{
+            if (r.status){
+                toast(r.data.message);
+                setText({...text,  name:"", email:"", phone:"", subject:"", message:"" })
+            }
+        }).catch(reason =>
+            toast("Something went wrong!")
+        )
+    }
     return (
-        <div>
-            <div className={'w-full bg-blue-900 py-10 mb-16 text-white '}>
-                <div className={'sm:w-3/5 w-full mx-auto sm:p-0 p-2'}>
-                    <h2 className={'sm:text-4xl text-2xl pt-4 '}>Get in Touch</h2>
-                    <p className={'sm:text-xl  text-sm py-4'}>Just drop us a line. We will be glad to answer your enquries. </p>
-                </div>
-            </div>
+        <>
+            {
+                contact.loading?
+                    <>
+                        <div className={'border-b-4 border-blue-900 md:w-3/5 mx-auto  '}>
+                            <Skeleton className={'h-96 w-full'} />
+                        </div>
 
-            <div className={'sm:w-3/5 mx-auto  flex flex-wrap mb-10 sm:border-4 border-gray-500 sm:p-0 p-2'}>
-                <div className={'sm:w-1/3 p-4 w-full bg-blue-900 pb-10 sm:border-r-4 border-gray-500 text-white '}>
-                    <h2 className={'text-xl py-8'}>Contact Information</h2>
-                    <div className={'flex pb-4'}>
-                        <div className={'w-1/5'}>
-                            <span className="material-icons text-2xl text-center ">
-                               location_on
-                            </span>
-                        </div>
-                        <div className={'w-4/5 '}>
-                            Makepe, RUE TAMPICO BP 5614 Douala-Cameroon
-                        </div>
-                    </div>
-                    <div className={'flex pb-4'}>
-                        <div className={'w-1/5'}>
-                                    <span className="material-icons text-2xl text-center ">
-                                       email
-                                    </span>
-                        </div>
-                        <div className={'w-4/5'}>
-                            admin@email.com
-                        </div>
-                    </div>
-                    <div className={'flex  pb-4'}>
-                        <div className={'w-1/5'}>
-                                <span className="material-icons text-2xl text-center ">
-                                   call
-                                </span>
-                        </div>
-                        <div className={'w-4/5'}>
-                            +8801856043854, +88001000000001
-                        </div>
-                    </div>
-                    <div className={'flex'}>
-                        <div className={'w-1/5'}>
-                            <span className="material-icons text-2xl text-center ">
-                               whatsapp
-                            </span>
-                        </div>
-                        <div className={'w-4/5'}>
-                            admin@email.com
-                        </div>
-                    </div>
-                    <div className={'w-full flex py-10 pt-24'}>
-                        <span className="material-icons text-4xl text-center ">
-                                   facebook
-                        </span>
-                        <span className="material-icons text-4xl text-center ">
-                            email
-                        </span>
-                        <span className="material-icons text-4xl text-center ">
-                            play_circle_filled
-                        </span>
-                        <span className="material-icons text-4xl text-center ">
-                            whatsapp
-                        </span>
-                    </div>
-                </div>
-                <div className={'sm:w-2/3 w-full bg-red-500 pb-10 p-4 '}>
-                    <div className={'flex py-8 px-4 text-white'}>
-                        <h2 className={'sm:w-1/2 w-full text-xl full '}>Send us a Message</h2>
-                        <span className="sm:w-1/2 material-icons text-4xl text-right ">
-                            email
-                        </span>
-                    </div>
-
-                    <div className={'flex flex-wrap px-4  sm:py-4'}>
-                            <div className={'sm:w-1/2 w-full  sm:pr-2 sm:mb-0 mb-4'}>
-                                <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
-                                       htmlFor="grid-first-name">
-                                    First Name
-                                </label>
-                                <input
-                                    className="appearance-none bg-transparent border-b w-full text-gray-700 mr-3 py-1  leading-tight focus:outline-none"
-                                    type="text" placeholder="Fast Name" aria-label="Full name"/>
+                    </>:
+                    <>
+                        <div className={'bg-slate-300'}>
+                            <div className={'border-b-4 border-blue-900 md:w-3/5 mx-auto  '}>
+                                <ReservationSlider/>
                             </div>
-                            <div className={'sm:w-1/2 w-full  sm:pl-2 sm:mb-0 mb-4'}>
-                                <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
-                                       htmlFor="grid-first-name">
-                                    Last Name
-                                </label>
-                                <input
-                                    className="appearance-none bg-transparent border-b w-full text-white mr-3 py-1 leading-tight focus:outline-none"
-                                    type="text" placeholder="Last Name" aria-label="Full name"/>
+                            <div className={'md:w-3/5 mx-auto bg-white'}>
+                                <section className={'md:w-5/6 mx-auto   pb-16'}>
+                                    <h4 className={'text-blue-700 pt-4 pb-2 mb-4 text-4xl border-b border-blue-700'}>Contat Us</h4>
+
+                                    {/*<-----------------------------------------------Message Information----------------------------------->*/}
+                                    <div className={'flex flex-wrap pt-10'}>
+                                        <div className={'md:w-2/3 w-full md:px-2 px-2'}>
+                                            <div className="flex items-center mb-6">
+                                                <div className="w-1/3">
+                                                    <label className="block text-sm text-white-500 md:text-left mb-1 md:mb-0 pr-4"
+                                                           htmlFor="inline-name">
+                                                        Name:
+                                                    </label>
+                                                </div>
+                                                <div className="w-2/3">
+                                                    <input
+                                                        onChange={event=>{
+                                                            setText({...text, name: event.target.value})
+                                                        }}
+                                                        value={text.name}
+                                                        className="bg-white  border border  w-full py-2 text-sm px-4 text-gray-900 leading-tight focus:outline-none  focus:bg-white focus:border-purple-500"
+                                                        id="inline-name" type="text" />
+                                                </div>
+                                            </div>
+
+
+
+                                            <div className="flex items-center mb-6">
+                                                <div className="w-1/3">
+                                                    <label className="block text-sm text-white-500 md:text-left mb-1 md:mb-0 pr-4"
+                                                           htmlFor="inline-email">
+                                                        Email:
+                                                    </label>
+                                                </div>
+                                                <div className="w-2/3">
+                                                    <input
+                                                        onChange={event=>{
+                                                            setText({...text, email: event.target.value})
+                                                        }}
+                                                        value={text.email}
+                                                        className="bg-white  border border  w-full py-2 text-sm px-4 text-gray-900 leading-tight focus:outline-none  focus:bg-white focus:border-purple-500"
+                                                        id="inline-email" type="email" />
+                                                </div>
+                                            </div>
+
+
+                                            <div className="flex items-center mb-6">
+                                                <div className="w-1/3">
+                                                    <label className="block text-sm text-white-500 md:text-left mb-1 md:mb-0 pr-4"
+                                                           htmlFor="inline-phone">
+                                                        Phone :
+                                                    </label>
+                                                </div>
+                                                <div className="w-2/3">
+                                                    <input
+                                                        onChange={event=>{
+                                                            setText({...text, phone: event.target.value})
+                                                        }}
+                                                        value={text.phone}
+                                                        className="bg-white  border border  w-full py-2 text-sm px-4 text-gray-900 leading-tight focus:outline-none  focus:bg-white focus:border-purple-500"
+                                                        id="inline-phone" type="text" />
+                                                </div>
+                                            </div>
+
+
+                                            <div className="flex items-center mb-6">
+                                                <div className="w-1/3">
+                                                    <label className="block text-sm text-white-500 md:text-left mb-1 md:mb-0 pr-4"
+                                                           htmlFor="inline-subject">
+                                                        Subject:
+                                                    </label>
+                                                </div>
+                                                <div className="w-2/3">
+                                                    <input
+                                                        onChange={event=>{
+                                                            setText({...text, subject: event.target.value})
+                                                        }}
+                                                        value={text.subject}
+                                                        className="bg-white  border border  w-full py-2 text-sm px-4 text-gray-900 leading-tight focus:outline-none  focus:bg-white focus:border-purple-500"
+                                                        id="inline-subject" type="text" />
+                                                </div>
+                                            </div>
+
+                                            <div className="flex mb-6">
+                                                <div className="w-1/3">
+                                                    <label className="block text-sm text-white-500 md:text-left mb-1 md:mb-0 pr-4"
+                                                           htmlFor="inline-message">
+                                                        Message:
+                                                    </label>
+                                                </div>
+                                                <div className="w-2/3">
+                                                <textarea
+                                                    onChange={event=>{
+                                                        setText({...text, message: event.target.value})
+                                                    }}
+                                                    value={text.message}
+                                                    className="bg-white  border border  w-full pb-32 text-sm px-4 text-gray-900 leading-tight focus:outline-none  focus:bg-white focus:border-purple-500"
+                                                    id="inline-message" type="text" />
+                                            </div>
+                                        </div>
+                                            <div className="flex items-center mb-6">
+                                                <div className="w-1/3">
+
+                                                </div>
+                                                <div className="w-2/3">
+                                                    <button
+                                                        onClick={sendMessage}
+                                                        className="bg-transparent hover:bg-blue-700 text-gray-700 text-sm hover:text-white py-2 px-4 border border-gray-400 hover:border-transparent">
+                                                        Submit
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        {/*<----------------------------------------------------------Hotel Information--------------------------------->*/}
+                                        <div className={'md:w-1/3 w-full md:pl-10 pl-2'}>
+                                            <div>
+                                                {
+                                                    !_.isEmpty(contact.data)?
+                                                     contact.data.map((v,i)=>(
+                                                         <div key={i}>
+                                                             <h4 className={'text-black mt-4 text-xl '}>{v.branchName}</h4>
+                                                             <p className={'text-sm py-2'}>{v.title}</p>
+                                                             <p className={'text-sm'}>{v.subTitle}</p>
+                                                             <div className={'flex pt-2'}>
+                                                                 <div className={'w-full flex'}>
+                                                                    <span className="material-icons text-sm text-center text-green-500">
+                                                                        call
+                                                                    </span>
+                                                                     <div className={'text-sm pl-2'}>
+                                                                         {v.phone}
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                             <div className={'flex pt-2'}>
+                                                                 <div className={'w-full flex'}>
+                                                                    <span className="material-icons text-sm text-center text-green-500">
+                                                                       whatsapp
+                                                                    </span>
+                                                                     <div className={'text-sm pl-2'}>
+                                                                         {v.whatsapp}
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                             <div className={'flex pt-2'}>
+                                                                 <div className={'w-full flex'}>
+                                                                    <span className="material-icons text-sm text-center text-green-500">
+                                                                        facebook
+                                                                    </span>
+                                                                     <div className={'text-sm pl-2'}>
+                                                                         {v.facebook}
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                             <div className={'flex pt-2'}>
+                                                                 <div className={'w-full flex'}>
+                                                                    <span className="material-icons text-sm text-center text-green-500">
+                                                                        email
+                                                                    </span>
+                                                                     <div className={'text-sm pl-2'}>
+                                                                         {v.email}
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+
+                                                         </div>
+                                                     )):<>Content Not Found</>
+                                                }
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
                             </div>
-                    </div>
-                    <div className={'flex flex-wrap px-4 py-4'}>
-                        <div className={'sm:w-1/2 w-full sm:pr-2 sm:mb-0 mb-4'}>
-                            <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
-                                   htmlFor="grid-first-name">
-                                Email
-                            </label>
-                            <input
-                                className="appearance-none bg-transparent border-b w-full text-white mr-3 py-1  leading-tight focus:outline-none"
-                                type="text" placeholder="Email" aria-label="Full name"/>
-                        </div>
-                        <div className={'sm:w-1/2 w-full sm:pl-2 sm:mb-0 mb-4'}>
-                            <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
-                                   htmlFor="grid-first-name">
-                                Subject
-                            </label>
-                            <input
-                                className="appearance-none bg-transparent border-b w-full text-white mr-3 py-1  leading-tight focus:outline-none"
-                                type="text" placeholder="Subject" aria-label="Full name"/>
-                        </div>
-                    </div>
-                    <div className={'px-4  sm:py-4'}>
-                        <div className={'w-full pr-2'}>
-                            <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
-                                   htmlFor="grid-first-name">
-                                Message
-                            </label>
-                            <textarea
-                                className="appearance-none bg-transparent border-b w-full text-gray-700 mr-3 py-1  leading-tight focus:outline-none"
-                                type="text" placeholder="How can we help you?" aria-label="Full name"/>
-                        </div>
-                    </div>
-                    <div className="pb-10 w-full px-4">
-                            <button
-                                className="w-full w-32 mt-5 flex justify-center rounded-xl  text-white bg-indigo-600 border-0 py-2 px-8 uppercase focus:outline-none hover:bg-indigo-700 rounded text-lg">submit</button>
-                    </div>
 
-                </div>
-            </div>
+                        </div>
+                    </>
+            }
+        </>
 
 
-        </div>
+
     );
 };
 

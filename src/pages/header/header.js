@@ -1,37 +1,40 @@
 import React, {useState} from 'react';
 import classnames from 'classnames';
-import logo from '../../../src/assets/image/logo1.png'
 import {NavLink} from "react-router-dom";
 
 const tab = [
     {
-        name: "HOME",
+        name: "Overview",
         url:"/"
     },
     {
-        name: "WHO WE ARE",
+        name: "Who We Are",
         url:"/about"
     },
 
     {
-        name: "DINING",
-        url:"/service"
+        name: "Dining",
+        url:"/catering"
     },
     {
-        name: "GALLERY",
+        name: "Gallery",
         url:"/gallery"
     },
     {
-        name: "RESERVATION",
+        name: "Reservation",
         url:"/reservation"
     },
     {
-        name: "CONTACT US",
+        name: "Contact Us",
         url:"/contact"
     },
     {
-        name: "LOGIN",
+        name: "Login",
         url:"/login"
+    },
+    {
+        name: "Review",
+        url:"/review"
     },
 
 ]
@@ -43,33 +46,32 @@ const Header = () => {
     return (
         <div>
             <section className={'w-full '}>
-                <div className={'flex bg-indigo-600  md:items-center md:justify-between md:flex-row flex-col'}>
+                <div className={'flex bg-blue-700  md:items-center md:justify-between md:flex-row flex-col px-4'}>
                     <div className={' py-4 flex justify-between'}>
-                        <img className={'logo h-20 w-60'}  src={logo} alt=""/>
+                        <NavLink to={'/'}>
+                            <h1 className={'border-2 border-white rounded p-2 text-2xl text-white font-bold uppercase'}>Hotel Logo</h1>
+                        </NavLink>
                         <div className={'hamburger md:hidden flex items-center pr-5'}>
-                            <span onClick={()=>setOpenMenu(true)} className={`${openMenu?"hidden": ""} material-icons text-white`}> menu </span>
-                            <span onClick={()=>setOpenMenu(false)} className={`${openMenu?"": "hidden"} material-icons text-white`}> close </span>
+                            <span onClick={()=>setOpenMenu(true)} className={`${openMenu?"hidden": ""} material-icons text-black`}> menu </span>
+                            <span onClick={()=>setOpenMenu(false)} className={`${openMenu?"": "hidden"} material-icons text-black`}> close </span>
                         </div>
                     </div>
 
                     <div
                         className={openMenu?"menu-active": ""}>
-                        <div className={"menu flex md:flex-row flex-col text-blue-500 hover:text-blue-800  md:justify-end "}>
+                        <div className={"menu flex md:items-center md:flex-row flex-col text-white hover:text-blue-800  md:justify-end  "}>
                             {
                                 tab.map((v, i) => (
-
                                     <NavLink to={v.url}
                                              onClick={() => setActiveTabIndex(i)}
                                              key={`profile-tab-${i}`}
-                                             className={classnames(activeTabIndex === i ? "active" : "", "mx-4 pb-4 text-white underline-offset-8 hover:text-indigo-400")}
+                                             className={classnames(activeTabIndex === i ? "active border-b-2 border-white" : "", "mx-4 pb-4 text-white underline-offset-8 hover:text-gray-800 ")}
                                     >
                                         {v.name}
                                     </NavLink>
                                 ))
                             }
                         </div>
-
-
                     </div>
                 </div>
 

@@ -1,142 +1,64 @@
-// import React from 'react';
-// import React, { Component } from "react";
-import Gallery from "react-photo-gallery";
-import ABCComponent from "reactjs-image-gallery";
-import React, { useState } from "react";
-import Lightbox from "react-image-lightbox";
-
-
-const data = [
-    {
-        src:
-            'https://images.unsplash.com/photo-1465310477141-6fb93167a273?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-        title: "Kayak",
-        thumbUrl:
-            "https://images.unsplash.com/photo-1465310477141-6fb93167a273?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80",
-        width: 1,
-        height: 1
-
-    },
-    {
-        src:
-            "https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-        title: "Cyclist competition",
-        thumbUrl:
-            "https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80",
-        width: 4,
-        height: 3
-    },
-    {
-        src:
-            "https://images.unsplash.com/photo-1526485856375-9110812fbf35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-        title: "Surfer in action",
-        thumbUrl:
-            "https://images.unsplash.com/photo-1526485856375-9110812fbf35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80",
-        width: 1,
-        height: 1
-    },
-    {
-        src:
-            "https://images.unsplash.com/photo-1423994485548-7c3cf5c99cfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1947&q=80",
-        title: "Drops",
-        thumbUrl:
-            "https://images.unsplash.com/photo-1423994485548-7c3cf5c99cfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1947&q=80",
-        width: 4,
-        height: 3
-    },
-    {
-        src:
-            "https://images.unsplash.com/photo-1423994485548-7c3cf5c99cfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1947&q=80",
-        title: "Drops",
-        thumbUrl:
-            "https://images.unsplash.com/photo-1423994485548-7c3cf5c99cfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1947&q=80",
-        width: 1,
-        height: 1
-    },
-
-    {
-        src:
-            "https://images.unsplash.com/photo-1444465693019-aa0b6392460d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-        title: "Bird",
-        thumbUrl:
-            "https://images.unsplash.com/photo-1444465693019-aa0b6392460d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80",
-        width: 4,
-        height: 3
-    },
-    {
-        src:
-            "https://images.unsplash.com/photo-1436968188282-5dc61aae3d81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80",
-        title: "Blue river",
-        thumbUrl:
-            "https://images.unsplash.com/photo-1436968188282-5dc61aae3d81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80",
-        width: 1,
-        height: 1
-    },
-    {
-        src:
-            "https://images.unsplash.com/photo-1446488547543-78c11468449a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80",
-        title: "Mountains",
-        thumbUrl:
-            "https://images.unsplash.com/photo-1446488547543-78c11468449a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80",
-        width: 4,
-        height: 3
-    },
-    {
-        src:
-            "https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-        title: "Cyclist competition",
-        thumbUrl:
-            "https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80",
-        width: 4,
-        height: 3
-    },
-    {
-        src:
-            "https://images.unsplash.com/photo-1526485856375-9110812fbf35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-        title: "Surfer in action",
-        thumbUrl:
-            "https://images.unsplash.com/photo-1526485856375-9110812fbf35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80",
-        width: 1,
-        height: 1
-    },
-    {
-        src:
-            "https://images.unsplash.com/photo-1423994485548-7c3cf5c99cfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1947&q=80",
-        title: "Drops",
-        thumbUrl:
-            "https://images.unsplash.com/photo-1423994485548-7c3cf5c99cfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1947&q=80",
-        width: 4,
-        height: 3
-    },
-    {
-        src:
-            "https://images.unsplash.com/photo-1423994485548-7c3cf5c99cfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1947&q=80",
-        title: "Drops",
-        thumbUrl:
-            "https://images.unsplash.com/photo-1423994485548-7c3cf5c99cfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1947&q=80",
-        width: 1,
-        height: 1
-    },
-
-    {
-        src:
-            "https://images.unsplash.com/photo-1444465693019-aa0b6392460d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-        title: "Bird",
-        thumbUrl:
-            "https://images.unsplash.com/photo-1444465693019-aa0b6392460d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=250&q=80",
-        width: 4,
-        height: 3
-    },
-];
-
+import React, {useEffect} from "react";
+import 'photoswipe/dist/photoswipe.css'
+import 'photoswipe/dist/default-skin/default-skin.css'
+import { Gallery, Item } from 'react-photoswipe-gallery'
+import {useDispatch, useSelector} from "react-redux";
+import {getPhoto} from "../../Services/Myphoto/MyphotoAction";
+import _ from "lodash";
+import {Skeleton} from "@mui/material";
 
 const Myphoto = () => {
+    const myphoto = useSelector(store=>store.myphoto)
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(getPhoto())
+    }, [])
     return (
-        <div  className={'sm:w-3/5 mx-auto  text-justify mb-10 sm:p-0 p-2'}>
-            <h2 className={'py-10 text-4xl '}><span className={'border-b-8 border-blue-900 '}>Gallery</span></h2>
-            {/*<ABCComponent  images={data} />*/}
-            <Gallery photos={data} />
-        </div>
+        <>
+            {
+                myphoto.loading?
+                    <>
+                        <div className={'sm:w-3/5 mx-auto  text-justify mb-10 sm:p-0 p-2'}>
+                            <Skeleton className={'h-96 w-full'}/><br/>
+                            <Skeleton className={'h-36 w-full'}/><br/>
+                            <Skeleton className={'h-24 w-full'}/><br/>
+                            <Skeleton className={'h-28 w-full'}/><br/>
+                            <Skeleton className={'h-20 w-full'}/>
+                        </div>
+
+                    </>:
+                    <>
+{/*<--------------------------------------------------Start Gallery  Protion  For Hotel---------------------------------------------------------->*/}
+                        <div  className={'sm:w-3/5 mx-auto  text-justify mb-10 sm:p-0 p-2'}>
+                            <h2 className={'py-10 text-4xl '}><span className={'border-b-8 border-blue-900 '}>Gallery</span></h2>
+                            <div className={"custom-gallery grid grid-cols-4 gap-4"}>
+                                <Gallery>
+                                    {
+                                        !_.isEmpty(myphoto.data)?
+                                            myphoto.data.map((v,i) => (
+                                                    <Item
+                                                        original={v.image}
+                                                        thumbnail={v.image}
+                                                        width="1024"
+                                                        height="768"
+                                                        key={i}
+                                                    >
+                                                        {({ ref, open }) => (
+                                                            <img  ref={ref} onClick={open} src={v.image} />
+                                                        )}
+                                                    </Item>
+                                                ))
+                                        :<>Content Not Found</>
+                                    }
+                                </Gallery>
+                            </div>
+                        </div>
+{/*<--------------------------------------------------End Gallery  Protion  For Hotel---------------------------------------------------------->*/}
+                    </>
+
+            }
+        </>
+
     );
 };
 

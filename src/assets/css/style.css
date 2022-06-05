@@ -1,31 +1,193 @@
-.swiper {
-    width: 100%;
-    height: 200px;
+/*<------------------------Header Menu----------------------->*/
+.menu{
+    transition: all ease-in-out .5s;
+    height: 0;
 }
 
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
+.menu-active .menu{
+    height:300px;
+}
+/*<------------------------------------------------------------------>*/
 
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+
+/*<------------------Menu Show Active--------------------------->*/
+.active, .btn:hover {
+    /*text: #346eeb;*/
+    color: #fff;
+}
+/*<------------------------------------------------------------------------> */
+/*-----------------------Home page slider_______________________________*/
+.home-slider .swiper {
+    width: 100%;
+    height: 600px;
+}
+.home-slider .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+/*-----------------------About page slider_______________________________*/
+.swiper {
+    height: 430px;
 }
 
 .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 430px;
 }
+
+
+/*-----------------------Events slider_______________________________*/
+.event-slider .swiper {
+    width: 100%;
+    height: 430px;
+}
+
+.event-slider .swiper-slide img {
+    height: 430px;
+    width: 100%;
+}
+
+
+/*-----------------------Review slider_______________________________*/
+.review-slider .swiper {
+    width: 100%;
+    height: 430px;
+}
+
+.review-slider .swiper-slide img {
+    height: 430px;
+    width: 100%;
+}
+
+
+
+/*-----------------------Reservation  slider_______________________________*/
+.reservation-slider .swiper {
+    width: 100%;
+    height: 430px;
+}
+
+.reservation-slider .swiper-slide img {
+    height: 430px;
+    width: 100%;
+}
+
+
+/*-----------------------catering  slider_______________________________*/
+.catering-slider .swiper {
+    width: 100%;
+    height: 600px;
+}
+
+.catering-slider .swiper-slide img {
+    height: 600px;
+    width: 100%;
+}
+
+
+
+.primary-color{
+    background-color: #ecfffb;
+}
+.frooter-color{
+    background-color: #b4f1f1;
+}
+/*-----------------------Home Page Sub-Navigation Ber_______________________________*/
+.sub-menu{
+    transition: all ease-in-out .5s;
+    height: 0;
+}
+
+.sub-menu-active .sub-menu{
+    height:300px;
+
+}
+
+.contact{
+   height: 90%;
+    margin: auto;
+}
+/*<-----------------------------------Home Page Scrolling Header------------------------------>*/
+.navbar-color{
+    background-color: #002651;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 20px;
+    color: black;
+
+
+}
+.sub-menu {
+    display: flex;
+    gap: 1em;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+ .sub-menu li:hover {
+    color: #1976D2;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    border-bottom: peru;
+
+}
+
+.sub-menu li {
+    padding: 5px 14px;
+
+}
+
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+    .sub-menu {
+        display:none;
+        position: absolute;
+        background-color:#085f63;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+        transition: 0.5s;
+
+    }
+    .sub-menu li:hover {
+        display: inline-block;
+        background-color:#085f63;
+        transition: 0.3s ease;
+
+    }
+    .sub-menu li + li {
+        margin-top: 12px;
+    }
+    input[type=checkbox]:checked ~ .sub-menu{
+        display: block;
+    }
+    .hamburger {
+        display: block;
+    }
+
+}
+/*<------------------------------------------------------------------------------------------>*/
+
+/*<-------------------------------------Preloader Start---------------------------------------->*/
+.pre-loader{
+   text-align: center;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/*<--------------------------------------Preloader End---------------------------------------->*/

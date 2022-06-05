@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -7,39 +6,51 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
-import "../../assets/css/style.css";
-
-// import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
-
-import pic1 from "../../../src/assets/image/img_15.png"
-import pic2 from "../../../src/assets/image/img_8.png"
-import pic3 from "../../../src/assets/image/img_9.png"
-import pic4 from "../../../src/assets/image/img_10.png"
+import _ from "lodash";
+import {useSelector} from "react-redux";
 const AboutSlide = () => {
-    return (
-        <div className={''}>
-            <Swiper
-                slidesPerView={3}
-                spaceBetween={30}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
-                pagination={{
-                    clickable: true,
-                }}
-                modules={[Autoplay, Pagination]}
-                className="mySwiper"
-            >
-                <SwiperSlide><img src={pic1}/></SwiperSlide>
-                <SwiperSlide><img src={pic2}/></SwiperSlide>
-                <SwiperSlide><img src={pic3}/></SwiperSlide>
-                <SwiperSlide><img src={pic4}/></SwiperSlide>
-                <SwiperSlide><img src={pic3}/></SwiperSlide>
+    const about = useSelector(store => store.about)
 
-            </Swiper>
-        </div>
+    return (
+        <>
+            {
+                about.loading?
+                    <>
+
+                    </>:
+                    <>
+                        <div className={''}>
+                            <Swiper
+                                loop={true}
+                                slidesPerView={3}
+                                spaceBetween={30}
+                                autoplay={{
+                                    delay: 2500,
+                                    disableOnInteraction: false,
+                                }}
+                                pagination={{
+                                    clickable: true,
+                                }}
+                                navigation={true}
+                                modules={[Autoplay, Pagination, Navigation]}
+                                className="mySwiper"
+                            >
+                                {
+                                    !_.isEmpty(about.data)?
+                                        !_.isEmpty(about.data[0].aboutPhoto)?
+                                            about.data[0].aboutPhoto.map((v,i)=>(
+                                                <SwiperSlide key={i}><img src={v.image }/></SwiperSlide>
+                                            ))
+
+                                        :<> </>
+                                    :<>Content Not Found</>
+                                }
+                            </Swiper>
+                        </div>
+                    </>
+            }
+        </>
     );
 };
 
